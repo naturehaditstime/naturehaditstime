@@ -6,7 +6,7 @@
     body {
       margin: 0;
       padding: 0;
-      height: 100vh; /* Set the height of the body to 100% of the viewport height */
+      height: 100vh;
     }
     img {
       width: 100%;
@@ -14,11 +14,30 @@
       object-fit: cover;
       cursor: pointer;
     }
+    @media (max-width: 768px) {
+      img.mobile-only {
+        content: url('landingimagemobile.jpg');
+      }
+      a {
+        href: "page3.html";
+      }
+      a.desktop-only {
+        display: none;
+      }
+    }
+    @media (min-width: 769px) {
+      a.mobile-only {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
-  <a href="page2.html">
+  <a class="desktop-only" href="page2.html">
     <img src="landingimage.jpg" alt="Full Page Image">
+  </a>
+  <a class="mobile-only" href="page3.html">
+    <img src="landingimagemobile.jpg" alt="Full Page Image">
   </a>
 </body>
 </html>
